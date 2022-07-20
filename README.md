@@ -17,7 +17,7 @@ They currently (as of July 2022) offer a Free account that allows for up to
 5,000 public url submissions per day (60/minute) and 10,000 result requests per day 
 Note: these quotas reset at Midnight UTC.
 
-Once you obtain an [API Key](#API-KEY) from URLSCan you can either save it to use as an 
+Once you obtain an [API Key](#API-KEY) from URLScan you can either save it to use as an 
 environmental variable or enter it into the program directly when [prompted](#API-KEY). 
 
 
