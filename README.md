@@ -26,7 +26,7 @@ environmental variable or enter it into the program directly when [prompted](#AP
 Python 3 is essential for running this program and, while not required, I always suggest setting up a
 python virtual environment (venv) or (pipenv) when running this tool in order to keep your workspace isolated.
 
-If you already know you have an appropriate version of Python installed on your system, you can skip to either
+If you already know you have an appropriate version of Python installed on your system, you can skip to either:
 Setting up a [Virtual Environment](#VirtualEnvironment), installing the [Requirements](#Requirements), or directly to [Usage](#Usage) 
 if all the other [Prerequisites](#Prerequisites) have been met.
 
