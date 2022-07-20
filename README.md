@@ -147,7 +147,7 @@ $ python3 -m venv env
 ```
 
 Note: The second argument is the location to create the virtual environment.
-so accourding to the above commands: venv will create a virtual Python installation in the env folder.
+so according to the above commands: venv will create a virtual Python installation in the env folder.
 In general, you can simply create this in your project yourself and call it env (or whatever you want).
 
 Tip: You should be sure to exclude your virtual environment directory from your version control system using .gitignore or similar.
@@ -155,7 +155,7 @@ Tip: You should be sure to exclude your virtual environment directory from your 
 ## Activating the Virtual Environment
 
 Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment
-erves to put the virtual environment-specific python and pip executables into your shell’s PATH.
+serves to put the virtual environment-specific python and pip executables into your shell’s PATH.
 
 ### Linux
 
@@ -196,7 +196,7 @@ urllib3==1.26.9
 
 ```
 
-To install these dependencies with via the 'requirements.txt' file, simply use  `pip -m install -r requirements.txt`
+To install these dependencies via the 'requirements.txt' file, simply use  `pip -m install -r requirements.txt`
 
 ### Linux
 
@@ -234,7 +234,7 @@ Environment as a variable named: "URLSCAN\_API\_KEY".
 $ URLSCAN_API_KEY="YOUR-API-KEY"
 
 # To set it for the current shell and all processes spawned from the current shell:
-$ export VARNAME="my value"
+$ export URLSCAN_API_KEY="YOUR-API-KEY"
 ````
 
 If the "URLSCAN\_API\_KEY" is not found in the environment, the program will prompt the user to enter their key with the following message:
@@ -302,7 +302,7 @@ use in other tools or you can visit the results link in order to examine the res
 You can also use the UUID to download a screenshot of the site (--png) and the Document Object Model (--dom) when available.
 
 This tool also accepts multiple URLs/UUIDs as input via a file path. It is important to note that for both URL files (--url\_file)
-and UUID files (--uuid\_file) that the expected format is: a single item (be it ULR or UUID) per line as the program will read in 
+and UUID files (--uuid\_file) that the expected format is: a single item (be it URL or UUID) per line as the program will read in 
 a file line by line, saving the text of each line into a list for late submission.
 
 When submitting multiple URL's using the optional argument: `-X` or `--export_uuids` will automatically extract the UUID's associated
@@ -314,7 +314,7 @@ allows you to specify a previously saved response file and select either the URL
 ### URLs
 
 If you have a single suspicious URL that you want to submit to URLSCan.io so you can investigate it further,
-Then you'll want to use the "--url" argument. Below is an example of how that might look.
+Then you'll want to use the `--url` argument. Below is an example of how that might look.
 Note: if an output location (i.e. the directory where you want to save the results: `-o`) is not specified ahead of time, the program
 will prompt you to specify one before saving the results.
 
