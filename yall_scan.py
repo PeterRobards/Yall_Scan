@@ -589,7 +589,7 @@ def main():
             response = replay_request(response, headers, data, time_delay, target_url)
 
         if response:
-            if ask_question("[?] Would you like to view the URL submission results?"):
+            if ask_question("Would you like to view the URL submission results?"):
                 display_url_response(response)
 
     #####################################################################
