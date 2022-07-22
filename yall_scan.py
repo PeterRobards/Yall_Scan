@@ -13,7 +13,7 @@ import user_agents as UA
 
 
 __author__ = ["Peter Robards"]
-__date__ = "7/19/2022"
+__date__ = "7/22/2022"
 __description__ = "Python tool for interacting with URLScan.io's API.\
      Submit suspicious URL's to be scanned by their site and\
      Submit UUIDs to retrieve the data associated with that scan."
@@ -416,8 +416,13 @@ def main():
         "-U",
         "--user_agent",
         dest="user_agent",
-        help="Signal you wish to select a specific user agent instead of default iOS.",
+        help="Signal you wish to select a specific user agent instead of the default: iOS.",
         action="store_true",
+    )
+    parser.add_argument(
+        "--custom_agent",
+        dest="custom_agent",
+        help="Provide custom User Agent string - wrapped in quotes - to submit with scan.",
     )
     parser.add_argument(
         "-T",
@@ -519,7 +524,9 @@ def main():
         # Asks user to select a type of user agent (e.g. iOS, Android, Chroms, etc)
         #  and then asks the user to select a specific user agent of that type.
         user_agent = UA.get_user_agent()
-
+    elif options.custom_agent:
+        # Assign a user provided custom string as the user agent
+        user_agent = options.custom_agent
     else:
         # Randomly select a user agent of the "iOS" type
         user_agent = UA.get_random_agent("iOS")
@@ -589,7 +596,7 @@ def main():
             response = replay_request(response, headers, data, time_delay, target_url)
 
         if response:
-            if ask_question("Would you like to view the URL submission results?"):
+            if ask_question("[?] Would you like to view the URL submission results?"):
                 display_url_response(response)
 
     #####################################################################
