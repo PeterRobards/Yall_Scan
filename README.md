@@ -280,8 +280,11 @@ optional arguments:
                         name of the Directory where you want to save results.
   --scan_type {public,unlisted,private}
                         Type of scan you wish to perform.
-  -U, --user_agent      Signal you wish to select a specific user agent instead of
-                        default iOS.
+  -U, --user_agent      Signal you wish to select a specific user agent instead of the
+                        default: iOS.
+  --custom_agent CUSTOM_AGENT
+                        Provide custom User Agent string - wrapped in quotes - to submit
+                        with scan.
   -T TAGS [TAGS ...], --tags TAGS [TAGS ...]
                         Used with URLs: Submit list (1-10 items) of tags to be
                         associated with URL(s).
@@ -329,12 +332,17 @@ The optional arguments that you can use with any type or URL submission include:
                         Note: defaults to whatever you have set on your URLScan.io account.
                         
   -U, --user_agent      Signal you wish to select a specific user agent from a provided list 
-                        instead of the default: a random iOS user agent.
+                        of user agents instead of the default: a random iOS user agent.
+  
+  --custom_agent CUSTOM_AGENT
+                        Provide a custom User Agent string - wrapped in quotes - to submit
+                        with scan.
   
   -T TAGS [TAGS ...], --tags TAGS [TAGS ...]
                         User defined Tags: Submit a list (1-10 items) of tags to be
                         associated with URL(s) on URLScan.io's website. If more than 10
                         tags are included, the program will only sumit the first 10 tags.
+  
   -c {de, us, jp, fr, gb, nl, ca, it, es}, --country_code {de,us,jp,fr,gb,nl,ca,it,es}
                         Country code that you wish the scan to originate from.
                         Works with "public" visibility scan_type.
@@ -402,4 +410,4 @@ $ python yall_scan.py --response_file Reponse_File.json -o SomeDirectory
 
 The program will then ask if you want to extract either the UUID or URL and then proceed accordingly.
 Note: if you plan to extract the URL from the file you can use the optional arguments associated with URLs
-(`--scan_type`, `--user_agent`, `--tags`, `--country_code`) at the command line in order to use them in the resulting scan(s).
+(`--scan_type`, `--user_agent`, `--custom_agent`, `--tags`, `--country_code`) at the command line in order to use them in the resulting scan(s).
