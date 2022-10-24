@@ -13,7 +13,7 @@ import user_agents as UA
 
 
 __author__ = ["Peter Robards"]
-__date__ = "7/22/2022"
+__date__ = "10/24/2022"
 __description__ = "Python tool for interacting with URLScan.io's API.\
      Submit suspicious URL's to be scanned by their site and\
      Submit UUIDs to retrieve the data associated with that scan."
