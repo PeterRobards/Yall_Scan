@@ -81,6 +81,35 @@ def display_url_response(response):
     print(f"  [+]Scan Visibility Level:\t{visibility_level}")
     print("*** " * 12)
 
+def validate_response(target_url, response_json_object):
+    """Validate expected 'UUID' json data in http response from URLScan.io"""
+
+    # Check for "uuid" is a key in the JSON response - if so, return
+    if "uuid" in response_json_object.keys():
+        return response_json_object
+
+    # Assuming "uuid" is not found, check for "status" key - if so, display status details
+    if "status" in response_json_object.keys():
+        status_code = response_json_object["status"]
+        print(
+            f"\n[!] ERROR -> Scan for '{target_url}' failed with status code: '{status_code}'"
+        )
+        print(f"[-] Response:\n{response_json_object}")
+        print("--- --- ---" * 4)
+        response_json_object["url"] = target_url
+        response_json_object["uuid"] = ""
+    else:
+        print(
+            f"\n[!] ERROR -> Scan for '{target_url}' failed with unexpected response..."
+        )
+        print(f"[-] Response:\n{response_json_object}")
+        print("--- --- ---" * 4)
+        # Add the target_url to json response linking it to the error information
+        # set "uuid" to an empty string to ensure error data can be saved later
+        response_json_object["url"] = target_url
+        response_json_object["uuid"] = ""
+
+    return response_json_object
 
 def error_check(content):
     """Method to check json content returned by requests library for known error codes """
