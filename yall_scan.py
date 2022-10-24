@@ -260,6 +260,11 @@ def extract_uuids(json_responses):
     else:
         this_uuid = json_responses.get("uuid")
         uuids.append(this_uuid)
+    
+    # Check for and remove empty strings in list of uuids resulting from
+    # missing uuids in the json response - see 'validate_response()' ln 88
+    while "" in uuids:
+        uuids.remove("")
 
     return uuids
 
