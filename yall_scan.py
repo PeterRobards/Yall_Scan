@@ -55,7 +55,11 @@ def scan_urls(urls_to_scan, headers, data):
             data=json.dumps(scan_data),
         )
 
-        responses.append(response.json())
+        # Validate expected values in JSON response: check for 'uuid' key
+        valid_response = validate_response(target_url, response.json())
+
+        responses.append(valid_response)
+
         time.sleep(2)  # Wait 2 seconds in between url submissions.
         response = ""
         scan_data["url"] = ""
